@@ -1,4 +1,4 @@
-[🌐English](/README.md) [🌐简体中文](/README.zh-CN.md)
+[English](/tree/main/README.md) | [简体中文](/tree/main/README.zh-CN.md)
 ---
 
 # Change Farm Cave - Stardew Valley
