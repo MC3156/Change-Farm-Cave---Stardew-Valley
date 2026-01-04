@@ -1,5 +1,5 @@
 <#
-  Copyright (c) 2024 MC3156&Dreamy_Blaze
+  Copyright (c) 2026 MC3156&Dreamy_Blaze
   This source code is licensed under the MIT license found in the
   LICENSE file in the root directory of this source tree.
 #>
@@ -7,7 +7,7 @@
 Add-Type -AssemblyName System.Windows.Forms
 # [System.Windows.Forms.MessageBox]::Show("Debug: ", "")
 
-# Ö÷º¯Êı
+# ä¸»å‡½æ•°
 function main {
 	Write-Host $Global:waitPlease -ForegroundColor Yellow
 	if ((checkFile) -eq 0) {
@@ -54,7 +54,7 @@ function main {
 		noticePrompt $Global:errorTitle $Global:notSupportedType $Global:btnClose $true
 	}
 }
-# º¯Êı-¼ì²é´æµµÓĞĞ§ĞÔ£¬¸üĞÂÈ«¾Ö±äÁ¿(ÎÄ±¾ºÍÎÄ¼şÂ·¾¶)
+# å‡½æ•°-æ£€æŸ¥å­˜æ¡£æœ‰æ•ˆæ€§ï¼Œæ›´æ–°å…¨å±€å˜é‡(æ–‡æœ¬å’Œæ–‡ä»¶è·¯å¾„)
 function checkFile {
 	$checkFile1 = "SaveGameInfo"
 	if (-not (Test-Path $checkFile1)) {
@@ -80,7 +80,7 @@ function checkFile {
 	}
 	return 0
 }
-# º¯Êı-±¸·İĞ´Èë´æµµÎÄ¼ş
+# å‡½æ•°-å¤‡ä»½å†™å…¥å­˜æ¡£æ–‡ä»¶
 function modifyFile {
 	param([string]$filePath, [string]$content)
 	$backup   = "$filePath.bak"
@@ -89,7 +89,7 @@ function modifyFile {
 	$writer.write($content)
 	$writer.Close()
 }
-# º¯Êı-Í¨ÖªÌáÊ¾¿ò
+# å‡½æ•°-é€šçŸ¥æç¤ºæ¡†
 function noticePrompt {
 	param([string]$title, [string]$content, [string]$button, [bool]$hasSound = $false)
 	$form = New-Object System.Windows.Forms.Form
@@ -115,7 +115,7 @@ function noticePrompt {
 	if ($hasSound) { [System.Media.SystemSounds]::Asterisk.Play() }
 	$form.ShowDialog()
 }
-# º¯Êı-Ñ¡ÔñÌáÊ¾¿ò
+# å‡½æ•°-é€‰æ‹©æç¤ºæ¡†
 function confirmPrompt {
 	param([string]$title, [string]$content, [string]$confirmButton, [string]$cancelButton, [bool]$hasSound = $false)
 	$form = New-Object System.Windows.Forms.Form
@@ -154,17 +154,17 @@ function confirmPrompt {
 		return 0
 	}
 }
-# º¯Êı-¼òµ¥Ìæ»»±ê¼ÇÎÄ±¾
+# å‡½æ•°-ç®€å•æ›¿æ¢æ ‡è®°æ–‡æœ¬
 function ReplaceBetween {
 	param(
-		[string]$Text, # Ô­×Ö·û´®
-		[string]$AnchorText = "", # ¼ì²éÆğµã
-		[string]$StopText = "", # ¼ì²éÖÕµã
-		[string]$StartMarker, # ¿ªÊ¼±ê¼Ç
-		[string]$EndMarker, # ½áÊø±ê¼Ç
-		[string]$Replacement, # Ìæ»»¿ªÊ¼Óë½áÊø±ê¼ÇÖ®¼äµÄÎÄ±¾
-		[bool]$IncludeMarkers = $false # ÊÇ·ñ°üº¬±ê¼ÇÒ»ÆğÌæ»»
-		# ·µ»Ø½á¹¹»¯¶ÔÏóÊı×é£¬ÔªËØ1ÊÇÎÄ±¾£¬ÔªËØ2ÊÇ³É¹¦Óë·ñ
+		[string]$Text, # åŸå­—ç¬¦ä¸²
+		[string]$AnchorText = "", # æ£€æŸ¥èµ·ç‚¹
+		[string]$StopText = "", # æ£€æŸ¥ç»ˆç‚¹
+		[string]$StartMarker, # å¼€å§‹æ ‡è®°
+		[string]$EndMarker, # ç»“æŸæ ‡è®°
+		[string]$Replacement, # æ›¿æ¢å¼€å§‹ä¸ç»“æŸæ ‡è®°ä¹‹é—´çš„æ–‡æœ¬
+		[bool]$IncludeMarkers = $false # æ˜¯å¦åŒ…å«æ ‡è®°ä¸€èµ·æ›¿æ¢
+		# è¿”å›ç»“æ„åŒ–å¯¹è±¡æ•°ç»„ï¼Œå…ƒç´ 1æ˜¯æ–‡æœ¬ï¼Œå…ƒç´ 2æ˜¯æˆåŠŸä¸å¦
 	)
 	$searchStartPos = 0
 	if ($AnchorText -and $AnchorText.Length -gt 0) {
@@ -201,18 +201,18 @@ function ReplaceBetween {
 	}
 	return [PSCustomObject]@{ Text = $newText; Success = $true }
 }
-# º¯Êı-¶à¹¦ÄÜXMLÎÄ±¾´¦Àíº¯Êı
+# å‡½æ•°-å¤šåŠŸèƒ½XMLæ–‡æœ¬å¤„ç†å‡½æ•°
 function ProcessTextContent {
 	param(
-		[string]$FileContent, # Ô­×Ö·û´®
-		[string]$StartText, # ¼ì²éÆğµã
-		[string]$TargetText1, # ²âÊÔÎÄ±¾1-ÈôÏÈ¼ì²éµ½£¬ÔòÔÚ´ËÎ»ÖÃºó²åÈëÎÄ±¾InsertText
-		[string]$TargetText2, # ²âÊÔÎÄ±¾2-ÈôÏÈ¼ì²éµ½£¬ÔòÊ¹ÓÃÎÄ±¾ReplaceTextÌæ»»¸ÃÎÄ±¾
-		[string]$TargetText3, # ²âÊÔÎÄ±¾3-ÈôÏÈ¼ì²éµ½»òÎ´¼ì²éµ½ÈÎºÎ²âÊÔÎÄ±¾£¬Êä³öDefaultText
+		[string]$FileContent, # åŸå­—ç¬¦ä¸²
+		[string]$StartText, # æ£€æŸ¥èµ·ç‚¹
+		[string]$TargetText1, # æµ‹è¯•æ–‡æœ¬1-è‹¥å…ˆæ£€æŸ¥åˆ°ï¼Œåˆ™åœ¨æ­¤ä½ç½®åæ’å…¥æ–‡æœ¬InsertText
+		[string]$TargetText2, # æµ‹è¯•æ–‡æœ¬2-è‹¥å…ˆæ£€æŸ¥åˆ°ï¼Œåˆ™ä½¿ç”¨æ–‡æœ¬ReplaceTextæ›¿æ¢è¯¥æ–‡æœ¬
+		[string]$TargetText3, # æµ‹è¯•æ–‡æœ¬3-è‹¥å…ˆæ£€æŸ¥åˆ°æˆ–æœªæ£€æŸ¥åˆ°ä»»ä½•æµ‹è¯•æ–‡æœ¬ï¼Œè¾“å‡ºDefaultText
 		[string]$InsertText,
 		[string]$ReplaceText,
-		[string]$DefaultText = "Error???" # ´¦ÀíÊ§°ÜµÄÊä³ö£¬ÏÖÒÑ½ûÓÃ
-		# ·µ»Ø½á¹¹»¯¶ÔÏóÊı×é£¬ÔªËØ1ÊÇÎÄ±¾£¬ÔªËØ2ÊÇ³É¹¦Óë·ñ
+		[string]$DefaultText = "Error???" # å¤„ç†å¤±è´¥çš„è¾“å‡ºï¼Œç°å·²ç¦ç”¨
+		# è¿”å›ç»“æ„åŒ–å¯¹è±¡æ•°ç»„ï¼Œå…ƒç´ 1æ˜¯æ–‡æœ¬ï¼Œå…ƒç´ 2æ˜¯æˆåŠŸä¸å¦
 	)
 	$startPos = $FileContent.IndexOf($StartText, [System.StringComparison]::OrdinalIgnoreCase)
 	if ($startPos -lt 0) {
@@ -253,35 +253,35 @@ function ProcessTextContent {
 		}
 	}
 }
-# ÓïÑÔ/Language
+# è¯­è¨€/Language
 $lang = [System.Globalization.CultureInfo]::CurrentUICulture.Name
 if ($lang -like "zh*") {
-	$Global:waitPlease = "É¨Ãè´æµµÖĞ£¬ÇëÉÔµÈ ~ ~ ~"
-	$Global:waitSelection = "µÈ´ıÓÃ»§Ñ¡ÔñÖĞ..."
-	$Global:waitProcessing = "´æµµ´¦ÀíÖĞ..."
-	$Global:btnClose = "¹Ø±Õ"
-	$Global:errorInvalidSave = "Ô­Òò£ºÎ´ÕÒµ½ÓĞĞ§µÄ´æµµÎÄ¼ş"
-	$Global:errorTitle = "¸ü¸ÄÅ©³¡¶´Ñ¨ - ´íÎó ¡Á"
-	$Global:errorUnchosen = "Ô­Òò£ºÄã»¹Ã»ÓĞÑ¡ÔñÅ©³¡¶´Ñ¨"
-	$Global:currentCave = "µ±Ç°Å©³¡¶´Ñ¨£º"
-	$Global:bat = "òùòğ"
-	$Global:mushroom = "Ä¢¹½"
-	$Global:yes = "ÊÇ"
-	$Global:no = "·ñ"
-	$Global:infoConfirm = "ÊÇ·ñ¸ü¸ÄÎª"
-	$Global:questionMark = "£¿"
-	$Global:title = "¸ü¸ÄÅ©³¡¶´Ñ¨"
-	$Global:notSupportedType = "µ±Ç°ÀàĞÍ²»ÊÜÖ§³Ö"
-	$Global:okTitle = "¸ü¸ÄÅ©³¡¶´Ñ¨ - Íê³É OvO"
-	$Global:infoChanged = "ºÃ£¬²Ù×÷Íê³É£¡"
-	$Global:processingFailed = "´¦ÀíÊ§°Ü£¬Î´Öª´íÎó"
+	$Global:waitPlease = "æ‰«æå­˜æ¡£ä¸­ï¼Œè¯·ç¨ç­‰ ~ ~ ~"
+	$Global:waitSelection = "ç­‰å¾…ç”¨æˆ·é€‰æ‹©ä¸­..."
+	$Global:waitProcessing = "å­˜æ¡£å¤„ç†ä¸­..."
+	$Global:btnClose = "å…³é—­"
+	$Global:errorInvalidSave = "åŸå› ï¼šæœªæ‰¾åˆ°æœ‰æ•ˆçš„å­˜æ¡£æ–‡ä»¶"
+	$Global:errorTitle = "æ›´æ”¹å†œåœºæ´ç©´ - é”™è¯¯ Ã—"
+	$Global:errorUnchosen = "åŸå› ï¼šä½ è¿˜æ²¡æœ‰é€‰æ‹©å†œåœºæ´ç©´"
+	$Global:currentCave = "å½“å‰å†œåœºæ´ç©´ï¼š"
+	$Global:bat = "è™è "
+	$Global:mushroom = "è˜‘è‡"
+	$Global:yes = "æ˜¯"
+	$Global:no = "å¦"
+	$Global:infoConfirm = "æ˜¯å¦æ›´æ”¹ä¸º"
+	$Global:questionMark = "ï¼Ÿ"
+	$Global:title = "æ›´æ”¹å†œåœºæ´ç©´"
+	$Global:notSupportedType = "å½“å‰ç±»å‹ä¸å—æ”¯æŒ"
+	$Global:okTitle = "æ›´æ”¹å†œåœºæ´ç©´ - å®Œæˆ OvO"
+	$Global:infoChanged = "å¥½ï¼Œæ“ä½œå®Œæˆï¼"
+	$Global:processingFailed = "å¤„ç†å¤±è´¥ï¼ŒæœªçŸ¥é”™è¯¯"
 } else {
 	$Global:waitPlease = "Scanning the game save, please wait a moment ~ ~ ~"
 	$Global:waitSelection = "Waiting for user selection..."
 	$Global:waitProcessing = "Processing..."
 	$Global:btnClose = "Close"
 	$Global:errorInvalidSave = "Reason: No valid game save file found"
-	$Global:errorTitle = "ChangeFarmCave - Error ¡Á"
+	$Global:errorTitle = "ChangeFarmCave - Error Ã—"
 	$Global:errorUnchosen = "Reason: You haven't chosen the farm cave yet"
 	$Global:currentCave = "Current Farm Cave: "
 	$Global:bat = "Bat"
@@ -296,10 +296,11 @@ if ($lang -like "zh*") {
 	$Global:infoChanged = "Bingo, operation completed!"
 	$Global:processingFailed = "Processing failed, unknown error"
 }
-# È«¾Ö±äÁ¿
+# å…¨å±€å˜é‡
 $Global:saveFile
 $Global:content
 $Global:nullStr = "@null@"
 $Global:mushroomObjects = "<objects><item><key><Vector2><X>4</X><Y>5</Y></Vector2></key><value><Object><isLostItem>false</isLostItem><category>-9</category><hasBeenInInventory>false</hasBeenInInventory><name>Mushroom Box</name><parentSheetIndex>128</parentSheetIndex><itemId>128</itemId><specialItem>false</specialItem><isRecipe>false</isRecipe><quality>0</quality><stack>1</stack><SpecialVariable>0</SpecialVariable><tileLocation><X>4</X><Y>5</Y></tileLocation><owner>0</owner><type>Crafting</type><canBeSetDown>true</canBeSetDown><canBeGrabbed>true</canBeGrabbed><isSpawnedObject>false</isSpawnedObject><questItem>false</questItem><isOn>true</isOn><fragility>2</fragility><price>0</price><edibility>-300</edibility><bigCraftable>true</bigCraftable><setOutdoors>true</setOutdoors><setIndoors>true</setIndoors><readyForHarvest>false</readyForHarvest><showNextIndex>false</showNextIndex><flipped>false</flipped><isLamp>false</isLamp><heldObject><isLostItem>false</isLostItem><category>-81</category><hasBeenInInventory>false</hasBeenInInventory><name>Common Mushroom</name><parentSheetIndex>404</parentSheetIndex><itemId>404</itemId><specialItem>false</specialItem><isRecipe>false</isRecipe><quality>0</quality><stack>1</stack><SpecialVariable>0</SpecialVariable><tileLocation><X>0</X><Y>0</Y></tileLocation><owner>0</owner><type>Basic</type><canBeSetDown>true</canBeSetDown><canBeGrabbed>true</canBeGrabbed><isSpawnedObject>false</isSpawnedObject><questItem>false</questItem><isOn>true</isOn><fragility>0</fragility><price>40</price><edibility>15</edibility><bigCraftable>false</bigCraftable><setOutdoors>false</setOutdoors><setIndoors>false</setIndoors><readyForHarvest>false</readyForHarvest><showNextIndex>false</showNextIndex><flipped>true</flipped><isLamp>false</isLamp><minutesUntilReady>0</minutesUntilReady><boundingBox><X>0</X><Y>0</Y><Width>0</Width><Height>0</Height><Location><X>0</X><Y>0</Y></Location><Size><X>0</X><Y>0</Y></Size></boundingBox><scale><X>0</X><Y>0</Y></scale><uses>0</uses><destroyOvernight>false</destroyOvernight></heldObject><lastOutputRuleId>Default</lastOutputRuleId><minutesUntilReady>1600</minutesUntilReady><boundingBox><X>256</X><Y>320</Y><Width>64</Width><Height>64</Height><Location><X>256</X><Y>320</Y></Location><Size><X>64</X><Y>64</Y></Size></boundingBox><scale><X>5</X><Y>6.9999957</Y></scale><uses>0</uses><destroyOvernight>false</destroyOvernight></Object></value></item><item><key><Vector2><X>6</X><Y>5</Y></Vector2></key><value><Object><isLostItem>false</isLostItem><category>-9</category><hasBeenInInventory>false</hasBeenInInventory><name>Mushroom Box</name><parentSheetIndex>128</parentSheetIndex><itemId>128</itemId><specialItem>false</specialItem><isRecipe>false</isRecipe><quality>0</quality><stack>1</stack><SpecialVariable>0</SpecialVariable><tileLocation><X>6</X><Y>5</Y></tileLocation><owner>0</owner><type>Crafting</type><canBeSetDown>true</canBeSetDown><canBeGrabbed>true</canBeGrabbed><isSpawnedObject>false</isSpawnedObject><questItem>false</questItem><isOn>true</isOn><fragility>2</fragility><price>0</price><edibility>-300</edibility><bigCraftable>true</bigCraftable><setOutdoors>true</setOutdoors><setIndoors>true</setIndoors><readyForHarvest>false</readyForHarvest><showNextIndex>false</showNextIndex><flipped>false</flipped><isLamp>false</isLamp><heldObject><isLostItem>false</isLostItem><category>-81</category><hasBeenInInventory>false</hasBeenInInventory><name>Common Mushroom</name><parentSheetIndex>404</parentSheetIndex><itemId>404</itemId><specialItem>false</specialItem><isRecipe>false</isRecipe><quality>0</quality><stack>1</stack><SpecialVariable>0</SpecialVariable><tileLocation><X>0</X><Y>0</Y></tileLocation><owner>0</owner><type>Basic</type><canBeSetDown>true</canBeSetDown><canBeGrabbed>true</canBeGrabbed><isSpawnedObject>false</isSpawnedObject><questItem>false</questItem><isOn>true</isOn><fragility>0</fragility><price>40</price><edibility>15</edibility><bigCraftable>false</bigCraftable><setOutdoors>false</setOutdoors><setIndoors>false</setIndoors><readyForHarvest>false</readyForHarvest><showNextIndex>false</showNextIndex><flipped>true</flipped><isLamp>false</isLamp><minutesUntilReady>0</minutesUntilReady><boundingBox><X>0</X><Y>0</Y><Width>0</Width><Height>0</Height><Location><X>0</X><Y>0</Y></Location><Size><X>0</X><Y>0</Y></Size></boundingBox><scale><X>0</X><Y>0</Y></scale><uses>0</uses><destroyOvernight>false</destroyOvernight></heldObject><lastOutputRuleId>Default</lastOutputRuleId><minutesUntilReady>1600</minutesUntilReady><boundingBox><X>384</X><Y>320</Y><Width>64</Width><Height>64</Height><Location><X>384</X><Y>320</Y></Location><Size><X>64</X><Y>64</Y></Size></boundingBox><scale><X>5</X><Y>6.9999957</Y></scale><uses>0</uses><destroyOvernight>false</destroyOvernight></Object></value></item><item><key><Vector2><X>8</X><Y>5</Y></Vector2></key><value><Object><isLostItem>false</isLostItem><category>-9</category><hasBeenInInventory>false</hasBeenInInventory><name>Mushroom Box</name><parentSheetIndex>128</parentSheetIndex><itemId>128</itemId><specialItem>false</specialItem><isRecipe>false</isRecipe><quality>0</quality><stack>1</stack><SpecialVariable>0</SpecialVariable><tileLocation><X>8</X><Y>5</Y></tileLocation><owner>0</owner><type>Crafting</type><canBeSetDown>true</canBeSetDown><canBeGrabbed>true</canBeGrabbed><isSpawnedObject>false</isSpawnedObject><questItem>false</questItem><isOn>true</isOn><fragility>2</fragility><price>0</price><edibility>-300</edibility><bigCraftable>true</bigCraftable><setOutdoors>true</setOutdoors><setIndoors>true</setIndoors><readyForHarvest>false</readyForHarvest><showNextIndex>false</showNextIndex><flipped>false</flipped><isLamp>false</isLamp><heldObject><isLostItem>false</isLostItem><category>-81</category><hasBeenInInventory>false</hasBeenInInventory><name>Common Mushroom</name><parentSheetIndex>404</parentSheetIndex><itemId>404</itemId><specialItem>false</specialItem><isRecipe>false</isRecipe><quality>0</quality><stack>1</stack><SpecialVariable>0</SpecialVariable><tileLocation><X>0</X><Y>0</Y></tileLocation><owner>0</owner><type>Basic</type><canBeSetDown>true</canBeSetDown><canBeGrabbed>true</canBeGrabbed><isSpawnedObject>false</isSpawnedObject><questItem>false</questItem><isOn>true</isOn><fragility>0</fragility><price>40</price><edibility>15</edibility><bigCraftable>false</bigCraftable><setOutdoors>false</setOutdoors><setIndoors>false</setIndoors><readyForHarvest>false</readyForHarvest><showNextIndex>false</showNextIndex><flipped>true</flipped><isLamp>false</isLamp><minutesUntilReady>0</minutesUntilReady><boundingBox><X>0</X><Y>0</Y><Width>0</Width><Height>0</Height><Location><X>0</X><Y>0</Y></Location><Size><X>0</X><Y>0</Y></Size></boundingBox><scale><X>0</X><Y>0</Y></scale><uses>0</uses><destroyOvernight>false</destroyOvernight></heldObject><lastOutputRuleId>Default</lastOutputRuleId><minutesUntilReady>1600</minutesUntilReady><boundingBox><X>512</X><Y>320</Y><Width>64</Width><Height>64</Height><Location><X>512</X><Y>320</Y></Location><Size><X>64</X><Y>64</Y></Size></boundingBox><scale><X>5</X><Y>6.9999957</Y></scale><uses>0</uses><destroyOvernight>false</destroyOvernight></Object></value></item><item><key><Vector2><X>4</X><Y>7</Y></Vector2></key><value><Object><isLostItem>false</isLostItem><category>-9</category><hasBeenInInventory>false</hasBeenInInventory><name>Mushroom Box</name><parentSheetIndex>128</parentSheetIndex><itemId>128</itemId><specialItem>false</specialItem><isRecipe>false</isRecipe><quality>0</quality><stack>1</stack><SpecialVariable>0</SpecialVariable><tileLocation><X>4</X><Y>7</Y></tileLocation><owner>0</owner><type>Crafting</type><canBeSetDown>true</canBeSetDown><canBeGrabbed>true</canBeGrabbed><isSpawnedObject>false</isSpawnedObject><questItem>false</questItem><isOn>true</isOn><fragility>2</fragility><price>0</price><edibility>-300</edibility><bigCraftable>true</bigCraftable><setOutdoors>true</setOutdoors><setIndoors>true</setIndoors><readyForHarvest>false</readyForHarvest><showNextIndex>false</showNextIndex><flipped>false</flipped><isLamp>false</isLamp><heldObject><isLostItem>false</isLostItem><category>-81</category><hasBeenInInventory>false</hasBeenInInventory><name>Common Mushroom</name><parentSheetIndex>404</parentSheetIndex><itemId>404</itemId><specialItem>false</specialItem><isRecipe>false</isRecipe><quality>0</quality><stack>1</stack><SpecialVariable>0</SpecialVariable><tileLocation><X>0</X><Y>0</Y></tileLocation><owner>0</owner><type>Basic</type><canBeSetDown>true</canBeSetDown><canBeGrabbed>true</canBeGrabbed><isSpawnedObject>false</isSpawnedObject><questItem>false</questItem><isOn>true</isOn><fragility>0</fragility><price>40</price><edibility>15</edibility><bigCraftable>false</bigCraftable><setOutdoors>false</setOutdoors><setIndoors>false</setIndoors><readyForHarvest>false</readyForHarvest><showNextIndex>false</showNextIndex><flipped>true</flipped><isLamp>false</isLamp><minutesUntilReady>0</minutesUntilReady><boundingBox><X>0</X><Y>0</Y><Width>0</Width><Height>0</Height><Location><X>0</X><Y>0</Y></Location><Size><X>0</X><Y>0</Y></Size></boundingBox><scale><X>0</X><Y>0</Y></scale><uses>0</uses><destroyOvernight>false</destroyOvernight></heldObject><lastOutputRuleId>Default</lastOutputRuleId><minutesUntilReady>1600</minutesUntilReady><boundingBox><X>256</X><Y>448</Y><Width>64</Width><Height>64</Height><Location><X>256</X><Y>448</Y></Location><Size><X>64</X><Y>64</Y></Size></boundingBox><scale><X>5</X><Y>6.9999957</Y></scale><uses>0</uses><destroyOvernight>false</destroyOvernight></Object></value></item><item><key><Vector2><X>6</X><Y>7</Y></Vector2></key><value><Object><isLostItem>false</isLostItem><category>-9</category><hasBeenInInventory>false</hasBeenInInventory><name>Mushroom Box</name><parentSheetIndex>128</parentSheetIndex><itemId>128</itemId><specialItem>false</specialItem><isRecipe>false</isRecipe><quality>0</quality><stack>1</stack><SpecialVariable>0</SpecialVariable><tileLocation><X>6</X><Y>7</Y></tileLocation><owner>0</owner><type>Crafting</type><canBeSetDown>true</canBeSetDown><canBeGrabbed>true</canBeGrabbed><isSpawnedObject>false</isSpawnedObject><questItem>false</questItem><isOn>true</isOn><fragility>2</fragility><price>0</price><edibility>-300</edibility><bigCraftable>true</bigCraftable><setOutdoors>true</setOutdoors><setIndoors>true</setIndoors><readyForHarvest>false</readyForHarvest><showNextIndex>false</showNextIndex><flipped>false</flipped><isLamp>false</isLamp><heldObject><isLostItem>false</isLostItem><category>-81</category><hasBeenInInventory>false</hasBeenInInventory><name>Common Mushroom</name><parentSheetIndex>404</parentSheetIndex><itemId>404</itemId><specialItem>false</specialItem><isRecipe>false</isRecipe><quality>0</quality><stack>1</stack><SpecialVariable>0</SpecialVariable><tileLocation><X>0</X><Y>0</Y></tileLocation><owner>0</owner><type>Basic</type><canBeSetDown>true</canBeSetDown><canBeGrabbed>true</canBeGrabbed><isSpawnedObject>false</isSpawnedObject><questItem>false</questItem><isOn>true</isOn><fragility>0</fragility><price>40</price><edibility>15</edibility><bigCraftable>false</bigCraftable><setOutdoors>false</setOutdoors><setIndoors>false</setIndoors><readyForHarvest>false</readyForHarvest><showNextIndex>false</showNextIndex><flipped>true</flipped><isLamp>false</isLamp><minutesUntilReady>0</minutesUntilReady><boundingBox><X>0</X><Y>0</Y><Width>0</Width><Height>0</Height><Location><X>0</X><Y>0</Y></Location><Size><X>0</X><Y>0</Y></Size></boundingBox><scale><X>0</X><Y>0</Y></scale><uses>0</uses><destroyOvernight>false</destroyOvernight></heldObject><lastOutputRuleId>Default</lastOutputRuleId><minutesUntilReady>1600</minutesUntilReady><boundingBox><X>384</X><Y>448</Y><Width>64</Width><Height>64</Height><Location><X>384</X><Y>448</Y></Location><Size><X>64</X><Y>64</Y></Size></boundingBox><scale><X>5</X><Y>6.9999957</Y></scale><uses>0</uses><destroyOvernight>false</destroyOvernight></Object></value></item><item><key><Vector2><X>8</X><Y>7</Y></Vector2></key><value><Object><isLostItem>false</isLostItem><category>-9</category><hasBeenInInventory>false</hasBeenInInventory><name>Mushroom Box</name><parentSheetIndex>128</parentSheetIndex><itemId>128</itemId><specialItem>false</specialItem><isRecipe>false</isRecipe><quality>0</quality><stack>1</stack><SpecialVariable>0</SpecialVariable><tileLocation><X>8</X><Y>7</Y></tileLocation><owner>0</owner><type>Crafting</type><canBeSetDown>true</canBeSetDown><canBeGrabbed>true</canBeGrabbed><isSpawnedObject>false</isSpawnedObject><questItem>false</questItem><isOn>true</isOn><fragility>2</fragility><price>0</price><edibility>-300</edibility><bigCraftable>true</bigCraftable><setOutdoors>true</setOutdoors><setIndoors>true</setIndoors><readyForHarvest>false</readyForHarvest><showNextIndex>false</showNextIndex><flipped>false</flipped><isLamp>false</isLamp><heldObject><isLostItem>false</isLostItem><category>-81</category><hasBeenInInventory>false</hasBeenInInventory><name>Common Mushroom</name><parentSheetIndex>404</parentSheetIndex><itemId>404</itemId><specialItem>false</specialItem><isRecipe>false</isRecipe><quality>0</quality><stack>1</stack><SpecialVariable>0</SpecialVariable><tileLocation><X>0</X><Y>0</Y></tileLocation><owner>0</owner><type>Basic</type><canBeSetDown>true</canBeSetDown><canBeGrabbed>true</canBeGrabbed><isSpawnedObject>false</isSpawnedObject><questItem>false</questItem><isOn>true</isOn><fragility>0</fragility><price>40</price><edibility>15</edibility><bigCraftable>false</bigCraftable><setOutdoors>false</setOutdoors><setIndoors>false</setIndoors><readyForHarvest>false</readyForHarvest><showNextIndex>false</showNextIndex><flipped>true</flipped><isLamp>false</isLamp><minutesUntilReady>0</minutesUntilReady><boundingBox><X>0</X><Y>0</Y><Width>0</Width><Height>0</Height><Location><X>0</X><Y>0</Y></Location><Size><X>0</X><Y>0</Y></Size></boundingBox><scale><X>0</X><Y>0</Y></scale><uses>0</uses><destroyOvernight>false</destroyOvernight></heldObject><lastOutputRuleId>Default</lastOutputRuleId><minutesUntilReady>1600</minutesUntilReady><boundingBox><X>512</X><Y>448</Y><Width>64</Width><Height>64</Height><Location><X>512</X><Y>448</Y></Location><Size><X>64</X><Y>64</Y></Size></boundingBox><scale><X>5</X><Y>6.9999957</Y></scale><uses>0</uses><destroyOvernight>false</destroyOvernight></Object></value></item><item><key><Vector2><X>10</X><Y>5</Y></Vector2></key><value><Object><isLostItem>false</isLostItem><category>-9</category><hasBeenInInventory>false</hasBeenInInventory><name>Dehydrator</name><parentSheetIndex>286</parentSheetIndex><itemId>Dehydrator</itemId><specialItem>false</specialItem><isRecipe>false</isRecipe><quality>0</quality><stack>1</stack><SpecialVariable>0</SpecialVariable><tileLocation><X>10</X><Y>5</Y></tileLocation><owner>0</owner><type>Crafting</type><canBeSetDown>true</canBeSetDown><canBeGrabbed>true</canBeGrabbed><isSpawnedObject>false</isSpawnedObject><questItem>false</questItem><isOn>true</isOn><fragility>0</fragility><price>50</price><edibility>-300</edibility><bigCraftable>true</bigCraftable><setOutdoors>true</setOutdoors><setIndoors>true</setIndoors><readyForHarvest>false</readyForHarvest><showNextIndex>false</showNextIndex><flipped>false</flipped><isLamp>false</isLamp><minutesUntilReady>0</minutesUntilReady><boundingBox><X>640</X><Y>320</Y><Width>64</Width><Height>64</Height><Location><X>640</X><Y>320</Y></Location><Size><X>64</X><Y>64</Y></Size></boundingBox><scale><X>0</X><Y>0</Y></scale><uses>0</uses><destroyOvernight>false</destroyOvernight></Object></value></item></objects>"
 
 main
+
