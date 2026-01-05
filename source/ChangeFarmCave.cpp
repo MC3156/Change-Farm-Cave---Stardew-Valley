@@ -3,13 +3,13 @@
   Copyright (c) 2026 MC3156 & Dreamy_Blaze
   This source code is licensed under the MIT license found in the
   LICENSE file in the root directory of this source tree.
-  * ±àÒëÃüÁî£ºg++ @.cpp -o @.exe -mwindows
-  * Ô´Âë±àÂë£ºGB-2312 (ÊÜÏŞÓÚPowerShell¿É½ÓÊÜµÄÖĞÎÄ±àÂë)
-  * ÖÂ¿´Ô´ÂëµÄ³ÌĞòÔ±-ÎÒÎªÊ²Ã´Ê¹ÓÃC++³ÌĞò£º
-  * - ½Å±¾VBScriptÒÑ¹ıÊ±£¬ÎŞ·¨´¦Àí´óÎÄ¼ş£»
-  * - ½Å±¾PowerShellËäÈ»·Ç³£ºÃÓÃ£¬µ«ÈİÒ×±»±¨¸æÎª·çÏÕ³ÌĞò£¬ĞèÒª°ü×°£»
-  * - ¹¹½¨C#³ÌĞò¡¢´ò°üĞÍPython³ÌĞòĞèÒªÓÃ»§°²×°.NET»òPython£¬C#³ÌĞò´ò°üÔËĞĞÊ±¿ÉÅòÕÍµ½130MB£¬ÔÙ¿¼ÂÇµ½ÍøÂçÇé¿ö£¬¶ÔÓÚ¸ÃĞ¡¹¦ÄÜÀ´½²ÊµÊôÃ»±ØÒª£»
-  * - ×÷ÕßË®Æ½ÓĞÏŞ£¬ÔİÊ±Ïë²»µ½¸üÒ×ÓÚ·Ö·¢¡¢±ãÓÚ¹ã´óÓÃ»§ÔÚWindowsÆ½Ì¨Ö´ĞĞµÄ³ÌĞò£¬Òò´Ë²ÉÓÃGNUÌ×¼ş¹¹½¨C++³ÌĞò£¬²¢ÄÚÖÃPowerShellÖ´ĞĞ¡£
+  * ç¼–è¯‘å‘½ä»¤ï¼šg++ @.cpp -o @.exe -mwindows
+  * æºç ç¼–ç ï¼šGB-2312 (å—é™äºPowerShellå¯æ¥å—çš„ä¸­æ–‡ç¼–ç )
+  * è‡´çœ‹æºç çš„ç¨‹åºå‘˜-æˆ‘ä¸ºä»€ä¹ˆä½¿ç”¨C++ç¨‹åºï¼š
+  * - è„šæœ¬VBScriptå·²è¿‡æ—¶ï¼Œæ— æ³•å¤„ç†å¤§æ–‡ä»¶ï¼›
+  * - è„šæœ¬PowerShellè™½ç„¶éå¸¸å¥½ç”¨ï¼Œä½†éœ€è¦åŒ…è£…ï¼›
+  * - æ„å»ºC#ç¨‹åºã€æ‰“åŒ…å‹Pythonç¨‹åºéœ€è¦ç”¨æˆ·å®‰è£….NETæˆ–Pythonï¼ŒC#ç¨‹åºæ‰“åŒ…è¿è¡Œæ—¶å¯è†¨èƒ€åˆ°130MBï¼Œå†è€ƒè™‘åˆ°ç½‘ç»œæƒ…å†µï¼Œå¯¹äºè¯¥å°åŠŸèƒ½æ¥è®²å®å±æ²¡å¿…è¦ï¼›
+  * - ä½œè€…æ°´å¹³æœ‰é™ï¼Œæš‚æ—¶æƒ³ä¸åˆ°æ›´æ˜“äºåˆ†å‘ã€ä¾¿äºå¹¿å¤§ç”¨æˆ·åœ¨Windowså¹³å°æ‰§è¡Œçš„ç¨‹åºï¼Œå› æ­¤é‡‡ç”¨GNUå¥—ä»¶æ„å»ºC++ç¨‹åºï¼Œå¹¶å†…ç½®PowerShellæ‰§è¡Œã€‚
 */
 #include <iostream>
 #include <fstream>
@@ -20,7 +20,7 @@ using namespace std;
 int main()
 {
     if (filesystem::exists("script_ChangeFarmCave_StardewValley_by_DreamyBlaze.ps1")) {
-        MessageBox(nullptr, "There are currently unclosed same processes,\nPlease check the backend program!\n¸Ã³ÌĞòµ±Ç°ÕıÔÚÔËĞĞÒ»¸ö½ø³Ì£¬Çë¼ì²éWindowsºóÌ¨¡£", "ChangeFarmCave - Error", MB_OK);
+        MessageBox(nullptr, "There are currently unclosed same processes,\nPlease check the backend program!\nè¯¥ç¨‹åºå½“å‰æ­£åœ¨è¿è¡Œä¸€ä¸ªè¿›ç¨‹ï¼Œè¯·æ£€æŸ¥Windowsåå°ã€‚", "ChangeFarmCave - Error", MB_OK);
         return 1;
     }
     ofstream ofs_ps1("script_ChangeFarmCave_StardewValley_by_DreamyBlaze.ps1");
@@ -28,11 +28,11 @@ int main()
   Copyright (c) 2026 MC3156 & Dreamy_Blaze
   This source code is licensed under the MIT license found in the
   LICENSE file in the root directory of this source tree.
-  ±àÂëÔ´Âë£ºGB-2312
+  ç¼–ç æºç ï¼šGB-2312
 #>
 Add-Type -AssemblyName System.Windows.Forms
 
-# Ö÷º¯Êı
+# ä¸»å‡½æ•°
 function main {
 	Write-Host $Global:waitPlease -ForegroundColor Yellow
 	if ((checkFile) -eq 0) {
@@ -79,7 +79,7 @@ function main {
 		noticePrompt $Global:errorTitle $Global:notSupportedType $Global:btnClose $true
 	}
 }
-# º¯Êı-¼ì²é´æµµÓĞĞ§ĞÔ£¬¸üĞÂÈ«¾Ö±äÁ¿(ÎÄ±¾ºÍÎÄ¼şÂ·¾¶)
+# å‡½æ•°-æ£€æŸ¥å­˜æ¡£æœ‰æ•ˆæ€§ï¼Œæ›´æ–°å…¨å±€å˜é‡(æ–‡æœ¬å’Œæ–‡ä»¶è·¯å¾„)
 function checkFile {
 	$checkFile1 = "SaveGameInfo"
 	if (-not (Test-Path $checkFile1)) {
@@ -105,7 +105,7 @@ function checkFile {
 	}
 	return 0
 }
-# º¯Êı-±¸·İĞ´Èë´æµµÎÄ¼ş
+# å‡½æ•°-å¤‡ä»½å†™å…¥å­˜æ¡£æ–‡ä»¶
 function modifyFile {
 	param([string]$filePath, [string]$content)
 	$backup   = "$filePath.bak"
@@ -114,7 +114,7 @@ function modifyFile {
 	$writer.write($content)
 	$writer.Close()
 }
-# º¯Êı-Í¨ÖªÌáÊ¾¿ò
+# å‡½æ•°-é€šçŸ¥æç¤ºæ¡†
 function noticePrompt {
 	param([string]$title, [string]$content, [string]$button, [bool]$hasSound = $false)
 	$form = New-Object System.Windows.Forms.Form
@@ -140,7 +140,7 @@ function noticePrompt {
 	if ($hasSound) { [System.Media.SystemSounds]::Asterisk.Play() }
 	$form.ShowDialog()
 }
-# º¯Êı-Ñ¡ÔñÌáÊ¾¿ò
+# å‡½æ•°-é€‰æ‹©æç¤ºæ¡†
 function confirmPrompt {
 	param([string]$title, [string]$content, [string]$confirmButton, [string]$cancelButton, [bool]$hasSound = $false)
 	$form = New-Object System.Windows.Forms.Form
@@ -179,17 +179,17 @@ function confirmPrompt {
 		return 0
 	}
 }
-# º¯Êı-¼òµ¥Ìæ»»±ê¼ÇÎÄ±¾
+# å‡½æ•°-ç®€å•æ›¿æ¢æ ‡è®°æ–‡æœ¬
 function ReplaceBetween {
 	param(
-		[string]$Text, # Ô­×Ö·û´®
-		[string]$AnchorText = "", # ¼ì²éÆğµã
-		[string]$StopText = "", # ¼ì²éÖÕµã
-		[string]$StartMarker, # ¿ªÊ¼±ê¼Ç
-		[string]$EndMarker, # ½áÊø±ê¼Ç
-		[string]$Replacement, # Ìæ»»¿ªÊ¼Óë½áÊø±ê¼ÇÖ®¼äµÄÎÄ±¾
-		[bool]$IncludeMarkers = $false # ÊÇ·ñ°üº¬±ê¼ÇÒ»ÆğÌæ»»
-		# ·µ»Ø½á¹¹»¯¶ÔÏóÊı×é£¬ÔªËØ1ÊÇÎÄ±¾£¬ÔªËØ2ÊÇ³É¹¦Óë·ñ
+		[string]$Text, # åŸå­—ç¬¦ä¸²
+		[string]$AnchorText = "", # æ£€æŸ¥èµ·ç‚¹
+		[string]$StopText = "", # æ£€æŸ¥ç»ˆç‚¹
+		[string]$StartMarker, # å¼€å§‹æ ‡è®°
+		[string]$EndMarker, # ç»“æŸæ ‡è®°
+		[string]$Replacement, # æ›¿æ¢å¼€å§‹ä¸ç»“æŸæ ‡è®°ä¹‹é—´çš„æ–‡æœ¬
+		[bool]$IncludeMarkers = $false # æ˜¯å¦åŒ…å«æ ‡è®°ä¸€èµ·æ›¿æ¢
+		# è¿”å›ç»“æ„åŒ–å¯¹è±¡æ•°ç»„ï¼Œå…ƒç´ 1æ˜¯æ–‡æœ¬ï¼Œå…ƒç´ 2æ˜¯æˆåŠŸä¸å¦
 	)
 	$searchStartPos = 0
 	if ($AnchorText -and $AnchorText.Length -gt 0) {
@@ -226,18 +226,18 @@ function ReplaceBetween {
 	}
 	return [PSCustomObject]@{ Text = $newText; Success = $true }
 }
-# º¯Êı-¶à¹¦ÄÜXMLÎÄ±¾´¦Àíº¯Êı
+# å‡½æ•°-å¤šåŠŸèƒ½XMLæ–‡æœ¬å¤„ç†å‡½æ•°
 function ProcessTextContent {
 	param(
-		[string]$FileContent, # Ô­×Ö·û´®
-		[string]$StartText, # ¼ì²éÆğµã
-		[string]$TargetText1, # ²âÊÔÎÄ±¾1-ÈôÏÈ¼ì²éµ½£¬ÔòÔÚ´ËÎ»ÖÃºó²åÈëÎÄ±¾InsertText
-		[string]$TargetText2, # ²âÊÔÎÄ±¾2-ÈôÏÈ¼ì²éµ½£¬ÔòÊ¹ÓÃÎÄ±¾ReplaceTextÌæ»»¸ÃÎÄ±¾
-		[string]$TargetText3, # ²âÊÔÎÄ±¾3-ÈôÏÈ¼ì²éµ½»òÎ´¼ì²éµ½ÈÎºÎ²âÊÔÎÄ±¾£¬Êä³öDefaultText
+		[string]$FileContent, # åŸå­—ç¬¦ä¸²
+		[string]$StartText, # æ£€æŸ¥èµ·ç‚¹
+		[string]$TargetText1, # æµ‹è¯•æ–‡æœ¬1-è‹¥å…ˆæ£€æŸ¥åˆ°ï¼Œåˆ™åœ¨æ­¤ä½ç½®åæ’å…¥æ–‡æœ¬InsertText
+		[string]$TargetText2, # æµ‹è¯•æ–‡æœ¬2-è‹¥å…ˆæ£€æŸ¥åˆ°ï¼Œåˆ™ä½¿ç”¨æ–‡æœ¬ReplaceTextæ›¿æ¢è¯¥æ–‡æœ¬
+		[string]$TargetText3, # æµ‹è¯•æ–‡æœ¬3-è‹¥å…ˆæ£€æŸ¥åˆ°æˆ–æœªæ£€æŸ¥åˆ°ä»»ä½•æµ‹è¯•æ–‡æœ¬ï¼Œè¾“å‡ºDefaultText
 		[string]$InsertText,
 		[string]$ReplaceText,
-		[string]$DefaultText = "Error???" # ´¦ÀíÊ§°ÜµÄÊä³ö£¬ÏÖÒÑ½ûÓÃ
-		# ·µ»Ø½á¹¹»¯¶ÔÏóÊı×é£¬ÔªËØ1ÊÇÎÄ±¾£¬ÔªËØ2ÊÇ³É¹¦Óë·ñ
+		[string]$DefaultText = "Error???" # å¤„ç†å¤±è´¥çš„è¾“å‡ºï¼Œç°å·²ç¦ç”¨
+		# è¿”å›ç»“æ„åŒ–å¯¹è±¡æ•°ç»„ï¼Œå…ƒç´ 1æ˜¯æ–‡æœ¬ï¼Œå…ƒç´ 2æ˜¯æˆåŠŸä¸å¦
 	)
 	$startPos = $FileContent.IndexOf($StartText, [System.StringComparison]::OrdinalIgnoreCase)
 	if ($startPos -lt 0) {
@@ -278,35 +278,35 @@ function ProcessTextContent {
 		}
 	}
 }
-# ÓïÑÔ/Language
+# è¯­è¨€/Language
 $lang = [System.Globalization.CultureInfo]::CurrentUICulture.Name
 if ($lang -like "zh*") {
-	$Global:waitPlease = "É¨Ãè´æµµÖĞ£¬ÇëÉÔµÈ ~ ~ ~"
-	$Global:waitSelection = "µÈ´ıÓÃ»§Ñ¡ÔñÖĞ..."
-	$Global:waitProcessing = "´æµµ´¦ÀíÖĞ..."
-	$Global:btnClose = "¹Ø±Õ"
-	$Global:errorInvalidSave = "Ô­Òò£ºÎ´ÕÒµ½ÓĞĞ§µÄ´æµµÎÄ¼ş"
-	$Global:errorTitle = "¸ü¸ÄÅ©³¡¶´Ñ¨ - ´íÎó ¡Á"
-	$Global:errorUnchosen = "Ô­Òò£ºÄã»¹Ã»ÓĞÑ¡ÔñÅ©³¡¶´Ñ¨"
-	$Global:currentCave = "µ±Ç°Å©³¡¶´Ñ¨£º"
-	$Global:bat = "òùòğ"
-	$Global:mushroom = "Ä¢¹½"
-	$Global:yes = "ÊÇ"
-	$Global:no = "·ñ"
-	$Global:infoConfirm = "ÊÇ·ñ¸ü¸ÄÎª"
-	$Global:questionMark = "£¿"
-	$Global:title = "¸ü¸ÄÅ©³¡¶´Ñ¨"
-	$Global:notSupportedType = "µ±Ç°ÀàĞÍ²»ÊÜÖ§³Ö"
-	$Global:okTitle = "¸ü¸ÄÅ©³¡¶´Ñ¨ - Íê³É OvO"
-	$Global:infoChanged = "ºÃ£¬²Ù×÷Íê³É£¡"
-	$Global:processingFailed = "´¦ÀíÊ§°Ü£¬Î´Öª´íÎó"
+	$Global:waitPlease = "æ‰«æå­˜æ¡£ä¸­ï¼Œè¯·ç¨ç­‰ ~ ~ ~"
+	$Global:waitSelection = "ç­‰å¾…ç”¨æˆ·é€‰æ‹©ä¸­..."
+	$Global:waitProcessing = "å­˜æ¡£å¤„ç†ä¸­..."
+	$Global:btnClose = "å…³é—­"
+	$Global:errorInvalidSave = "åŸå› ï¼šæœªæ‰¾åˆ°æœ‰æ•ˆçš„å­˜æ¡£æ–‡ä»¶"
+	$Global:errorTitle = "æ›´æ”¹å†œåœºæ´ç©´ - é”™è¯¯ Ã—"
+	$Global:errorUnchosen = "åŸå› ï¼šä½ è¿˜æ²¡æœ‰é€‰æ‹©å†œåœºæ´ç©´"
+	$Global:currentCave = "å½“å‰å†œåœºæ´ç©´ï¼š"
+	$Global:bat = "è™è "
+	$Global:mushroom = "è˜‘è‡"
+	$Global:yes = "æ˜¯"
+	$Global:no = "å¦"
+	$Global:infoConfirm = "æ˜¯å¦æ›´æ”¹ä¸º"
+	$Global:questionMark = "ï¼Ÿ"
+	$Global:title = "æ›´æ”¹å†œåœºæ´ç©´"
+	$Global:notSupportedType = "å½“å‰ç±»å‹ä¸å—æ”¯æŒ"
+	$Global:okTitle = "æ›´æ”¹å†œåœºæ´ç©´ - å®Œæˆ OvO"
+	$Global:infoChanged = "å¥½ï¼Œæ“ä½œå®Œæˆï¼"
+	$Global:processingFailed = "å¤„ç†å¤±è´¥ï¼ŒæœªçŸ¥é”™è¯¯"
 } else {
 	$Global:waitPlease = "Scanning the game save, please wait a moment ~ ~ ~"
 	$Global:waitSelection = "Waiting for user selection..."
 	$Global:waitProcessing = "Processing..."
 	$Global:btnClose = "Close"
 	$Global:errorInvalidSave = "Reason: No valid game save file found"
-	$Global:errorTitle = "ChangeFarmCave - Error ¡Á"
+	$Global:errorTitle = "ChangeFarmCave - Error Ã—"
 	$Global:errorUnchosen = "Reason: You haven't chosen the farm cave yet"
 	$Global:currentCave = "Current Farm Cave: "
 	$Global:bat = "Bat"
@@ -321,7 +321,7 @@ if ($lang -like "zh*") {
 	$Global:infoChanged = "Bingo, operation completed!"
 	$Global:processingFailed = "Processing failed, unknown error"
 }
-# È«¾Ö±äÁ¿
+# å…¨å±€å˜é‡
 $Global:saveFile
 $Global:content
 $Global:nullStr = "@null@"
@@ -341,3 +341,4 @@ main
     if (filesystem::exists("script_ChangeFarmCave_StardewValley_by_DreamyBlaze.ps1")) filesystem::remove("script_ChangeFarmCave_StardewValley_by_DreamyBlaze.ps1");
     return 0;
 }
+
