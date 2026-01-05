@@ -3,9 +3,9 @@
 ### **更改农场洞穴 - 星露谷物语**
 
 
-如果你选错了农场洞穴，该模组给你提供无数次更改机会。
+如果你选错了农场洞穴，该脚本给你提供无数次更改机会。
 
-If you choose the wrong Farm Cave, this mod provides you with countless opportunities to make changes.
+If you choose the wrong Farm Cave, this script provides you with countless opportunities to make changes.
 
 #### ▶️ 在NEXUS支持我喵~ \*OvO\* 👉 [![Static Badge](https://img.shields.io/badge/Dyblz-NEXUS-red)](https://www.nexusmods.com/stardewvalley/mods/40547 "Support me on Nexusmods (*OvO*)")  [![Static Badge](https://img.shields.io/badge/MIT-LICENSE-blue)](./LICENSE) [![Stars](https://img.shields.io/github/stars/MC3156/Change-Farm-Cave---Stardew-Valley)](https://github.com/MC3156/Change-Farm-Cave---Stardew-Valley "Star!  (*OvO*)")
 
